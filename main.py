@@ -52,8 +52,8 @@ def main():
     """
     Função principal que executa o bot.
     """
-    while True:
-        try:
+    try:
+        while True:
             # Obter dados de mercado
             df = get_ohlcv(BASE_SYMBOL, TIMEFRAME)
             # Aplicar a estratégia de "Trend Following"
@@ -70,9 +70,14 @@ def main():
 
             time.sleep(60)  # Esperar 60 segundos antes de buscar novos dados
 
-        except Exception as e:
-            log_to_file(f"Erro: {str(e)}")
-            time.sleep(60)
+    except KeyboardInterrupt:
+        # Captura o encerramento manual do bot (Ctrl+C)
+        log_to_file("Bot interrompido manualmente.")
+        print(" Bot interrompido pelo usuário.")
+
+    except Exception as e:
+        log_to_file(f"Erro: {str(e)}")
+        time.sleep(60)
 
 if __name__ == "__main__":
     main()

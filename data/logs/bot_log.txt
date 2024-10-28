@@ -1,1 +1,3 @@
 Erro: binance GET https://api.binance.com/api/v3/klines?interval=1h&limit=100&symbol=BTCUSDT
+Bot interrompido manualmente.
+Bot interrompido manualmente.
