@@ -1,0 +1,5 @@
+ccxt==4.4.24          # Biblioteca para integração com corretoras como Binance
+pandas==2.2.3         # Para manipulação e análise de dados
+numpy==1.24.3         # Necessário para cálculos numéricos e TA-Lib
+TA-Lib==0.4.0         # Para análises técnicas e indicadores
+python-dotenv==1.0.1  # Para armazenar credenciais
