@@ -27,10 +27,15 @@ def get_ohlcv(symbol, timeframe='1h', limit=100):
     """
     Função para buscar dados de mercado (OHLCV) da Binance.
     """
-    ohlcv = exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
-    df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-    return df
+    try:
+        ohlcv = exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
+        df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+        return df
+    except Exception as e:
+        log_to_file(f"Erro ao buscar dados de mercado: {str(e)}")
+        return None
+
 
 # Função para executar uma ordem de compra
 def buy_order(symbol, quantity):
