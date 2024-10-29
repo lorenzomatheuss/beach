@@ -10,3 +10,6 @@ __pycache__/
 
 # Ignore macOS hidden files
 .DS_Store
+
+# Ingnore os logs
+data/logs
