@@ -32,3 +32,22 @@ An automated cryptocurrency trading bot built in Python that implements a trend-
 **BASE_SYMBOL**=BTC/USDT
 **TIMEFRAME**=1h
 **QUANTITY**=0.001
+
+## Project Structure
+
+crypto-bot/
+│
+├── config/
+├── data/
+│   └── logs/
+├── strategies/
+│   └── trend_following.py  # Trading strategy logic
+├── utils/
+│   └── helpers.py          # Helper functions
+├── .env                    # Environment variables file
+├── .gitignore               # Gitignore file for sensitive files
+├── README.md                # Project documentation
+├── main.py                  # Main file to run the bot
+├── backtest.py              # Script for running backtests
+├── requirements.txt         # Project dependencies
+└── venv/                    # Virtual environment
