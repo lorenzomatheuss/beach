@@ -6,3 +6,5 @@ Bot interrompido manualmente.
 Bot interrompido manualmente.
 Bot interrompido manualmente.
 Bot interrompido manualmente.
+Erro ao buscar dados de mercado: binance GET https://api.binance.com/api/v3/klines?interval=1h&limit=100&symbol=BTCUSDT
+Erro: 'NoneType' object is not subscriptable
