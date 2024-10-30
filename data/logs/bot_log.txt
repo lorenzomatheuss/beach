@@ -2,3 +2,5 @@ Erro: binance GET https://api.binance.com/api/v3/klines?interval=1h&limit=100&sy
 Bot interrompido manualmente.
 Bot interrompido manualmente.
 Bot interrompido manualmente.
+Bot interrompido manualmente.
+Bot interrompido manualmente.
