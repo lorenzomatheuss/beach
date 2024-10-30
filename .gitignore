@@ -1,10 +1,9 @@
 # Ignore the virtual environment folder
 venv/
+
 # Ignore environment variables
 .env
-# Ignore log files
-*.log
-data/logs/
+
 # Ignore Python cache
 __pycache__/
 
