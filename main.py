@@ -29,6 +29,9 @@ def get_ohlcv(symbol, timeframe='1h', limit=100):
     """
     try:
         ohlcv = exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
+        if ohlcv is None or len(ohlcv) == 0:
+            log_to_file("Erro: Resposta da API é None ou vazia")
+            return None
         df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
         return df
@@ -61,6 +64,11 @@ def main():
         while True:
             # Obter dados de mercado
             df = get_ohlcv(BASE_SYMBOL, TIMEFRAME)
+            if df is None:
+                log_to_file("Erro: Dados de mercado não foram carregados. Tentando novamente em 60 segundos.")
+                time.sleep(60)
+                continue
+
             # Aplicar a estratégia de "Trend Following"
             df = trend_following_strategy(df)
 
@@ -78,11 +86,12 @@ def main():
     except KeyboardInterrupt:
         # Captura o encerramento manual do bot (Ctrl+C)
         log_to_file("Bot interrompido manualmente.")
-        print(" Bot interrompido pelo usuário.")
+        print("Bot interrompido pelo usuário.")
 
     except Exception as e:
-        log_to_file(f"Erro: {str(e)}")
+        log_to_file(f"Erro inesperado no bot: {str(e)}")
         time.sleep(60)
+
 
 if __name__ == "__main__":
     main()
