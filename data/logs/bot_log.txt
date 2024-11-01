@@ -15,3 +15,6 @@ Erro: Dados de mercado não foram carregados. Tentando novamente em 60 segundos.
 Erro ao buscar dados de mercado: binance GET https://api.binance.com/api/v3/klines?interval=1h&limit=100&symbol=BTCUSDT
 Erro: Dados de mercado não foram carregados. Tentando novamente em 60 segundos.
 Bot interrompido manualmente.
+Erro ao buscar dados de mercado: binance {"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+Erro: Dados de mercado não foram carregados. Tentando novamente em 60 segundos.
+Bot interrompido manualmente.
